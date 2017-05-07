@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danny Troxell: MineSweep (Adaptation)</title>
+  <link rel="stylesheet" href="mineSweep.css">
+</head>
+
+<body>
+  <div id="everything">
+  <div id="buttonContainer">
+  </div>
+  
+  <div id="inputs">
+    <div>Created by Danny Troxell (Started March 2, 2017, Finished March 3, 2017)</div>
+    <div>Press CTL Button While Clicking To Mark A Mine</div>
+  
+    <label for="paramRow">Rows:</label><input label="Rows:" id="paramRow" type="number" value="22">
+    <label for="paramColumn">Columns:</label><input label="Columns:" id="paramColumn" type="number" value="42">
+    <label for="paramBomb">Bombs:</label><input label="Bombs:" id="paramBomb" type="number" value="80">
+    <button id="ResetOrStart" onclick="reset()" style="width:100px">Start</button>
+  </div>
+</div>
+  
+  <script src="mineSweep.js"></script>
+</body>
+</html>
