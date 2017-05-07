@@ -213,7 +213,8 @@ function startGame(gameRows, gameColumns, numBombs){
   }
   
   function displayWhenZero(row, column){
-        if(gem[row][column].place === "middle" && gem[row][column].display === false){ //display middle also simulate id within add one function
+    if(gem[row][column].display === false){
+        if(gem[row][column].place === "middle"){ //display middle also simulate id within add one function
           gem[row][column].display = true
           clickOne(row,(column + 1))
           clickOne(row,(column - 1))
@@ -223,55 +224,56 @@ function startGame(gameRows, gameColumns, numBombs){
           clickOne((row + 1),(column - 1))
           clickOne((row - 1),(column - 1))
           clickOne((row - 1),(column + 1))
-        }else if(gem[row][column].place === "top" && gem[row][column].display === false){  //display top row
+        }else if(gem[row][column].place === "top"){  //display top row
           gem[row][column].display = true
           clickOne(row,(column + 1))
           clickOne(row,(column - 1))
           clickOne((row + 1),column)
           clickOne((row + 1),(column + 1))
           clickOne((row + 1),(column - 1))
-        }else if(gem[row][column].place === "bottom" && gem[row][column].display === false){ //display bottom row
+        }else if(gem[row][column].place === "bottom"){ //display bottom row
           gem[row][column].display = true
           clickOne(row,(column + 1))
           clickOne(row,(column - 1))
           clickOne((row - 1),column)
           clickOne((row - 1),(column - 1))
           clickOne((row - 1),(column + 1))
-        }else if(gem[row][column].place === "left" && gem[row][column].display === false){ //display left column
+        }else if(gem[row][column].place === "left"){ //display left column
           gem[row][column].display = true
           clickOne(row,(column + 1))
           clickOne((row + 1),column)
           clickOne((row - 1),column)
           clickOne((row + 1),(column + 1))
           clickOne((row - 1),(column + 1))
-        }else if(gem[row][column].place === "right" && gem[row][column].display === false){  //display right column
+        }else if(gem[row][column].place === "right"){  //display right column
           gem[row][column].display = true
           clickOne(row,(column - 1))
           clickOne((row + 1),column)
           clickOne((row - 1),column)
           clickOne((row + 1),(column - 1))
           clickOne((row - 1),(column - 1))
-        }else if(gem[row][column].plcae === "top left" && gem[row][column].display === false){   //display top left corner
+        }else if(gem[row][column].plcae === "top left"){   //display top left corner
           gem[row][column].display = true
           clickOne(row,(column + 1))
           clickOne((row + 1),column)
           clickOne((row + 1),(column + 1))
-        }else if(gem[row][column].place === "bottom left" && gem[row][column].display === false){  //display bottom left corner
+        }else if(gem[row][column].place === "bottom left"){  //display bottom left corner
           gem[row][column].display = true
           clickOne(row,(column + 1))
           clickOne((row - 1),column)
           clickOne((row - 1),(column + 1))
-        }else if(gem[row][column].place === "top right" && gem[row][column].display === false){  //display top right corner
+        }else if(gem[row][column].place === "top right"){  //display top right corner
           gem[row][column].display = true
           clickOne(row,(column - 1))
           clickOne((row + 1),column)
           clickOne((row + 1),(column - 1))
-        }else if(gem[row][column].place === "bottom right" && gem[row][column].display === false){ //display bottom right corner
+        }else if(gem[row][column].place === "bottom right"){ //display bottom right corner
           gem[row][column].display = true
           clickOne(row,(column - 1))
           clickOne((row - 1),column)
           clickOne((row - 1),(column - 1))
         }
+    }
   }
   
   function clickEvent(id){
@@ -307,7 +309,7 @@ function startGame(gameRows, gameColumns, numBombs){
           }
       }
         gem[row][column].btn.style.fontWeight = "bold";
-        gem[row][column].btn.className = "clickedButton";        //comment out to make the buttons look like the other buttons or change the last three styles
+        gem[row][column].btn.className = "clickedButton"; //comment out to make the buttons look like the other buttons or change the last three styles
       
       if(gem[row][column].game === "bomb"){
         gem[row][column].btn.style.backgroundColor = "lightBlue";
